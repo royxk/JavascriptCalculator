@@ -1,0 +1,17 @@
+function appendToDisplay(value) {
+  document.getElementById("display").value += value;
+}
+
+function clearDisplay() {
+  document.getElementById("display").value = "";
+}
+
+function calculate() {
+  let expression = document.getElementById("display").value;
+  try {
+    let result = eval(expression); // eval 함수로 수식을 계산
+    document.getElementById("display").value = result;
+  } catch (error) {
+    document.getElementById("display").value = "Error"; // 수식이 잘못된 경우 오류 메시지 출력
+  }
+}
